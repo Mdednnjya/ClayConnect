@@ -8,6 +8,11 @@ class ProcController extends Controller
 {
     public function regist()
     {
-        return view('register');
+        return view('auth.register');
+    }
+
+    public function login()
+    {
+        return view('auth.login');
     }
 }
