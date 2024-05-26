@@ -20,4 +20,4 @@ Route::get('/', function () {
 
 Route::get('/register', [ProcController::class, 'regist']);
 
-Route::get('/login', [ProcController::class, 'login']);
+Route::get('/login', [ProcController::class, 'login'])->name('login');

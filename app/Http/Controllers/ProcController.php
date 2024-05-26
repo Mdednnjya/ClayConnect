@@ -8,11 +8,13 @@ class ProcController extends Controller
 {
     public function regist()
     {
-        return view('auth.register');
+        $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+        return view('auth.register', compact('googleMapsApiKey'));
     }
 
     public function login()
     {
-        return view('auth.login');
+        $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+        return view('auth.login', compact('googleMapsApiKey'));
     }
 }

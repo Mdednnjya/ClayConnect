@@ -26,7 +26,7 @@
                         <a class="nav-link" href="#contact" style="font-family: 'Lato'; font-size: 20px; text-decoration: none; color: black; transition: color 0.3s;" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Contact</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a class="nav-link" href="" style="font-family: 'Scheherazade New'; font-size: 20px; font-weight: 600; text-decoration: none; color: white; background-color: #1a202c; transition: color 0.3s; padding: 6px 45px; border-radius: 25px" onmouseover="this.style.color='gray'" onmouseout="this.style.color='white'">Login</a>
+                        <a class="nav-link" href="{{ route('login') }}" style="font-family: 'Scheherazade New'; font-size: 20px; font-weight: 600; text-decoration: none; color: white; background-color: #1a202c; transition: color 0.3s; padding: 6px 45px; border-radius: 25px" onmouseover="this.style.color='gray'" onmouseout="this.style.color='white'">Login</a>
                     </li>
                 </ul>
             </div>
@@ -48,4 +48,11 @@
 
     mediaQuery.addListener(handleMediaQueryChange);
     handleMediaQueryChange(mediaQuery);
+
+    document.querySelectorAll('.offcanvas-body .nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('offcanvasNavbar'));
+            offcanvas.hide();
+        });
+    });
 </script>
