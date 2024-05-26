@@ -15,9 +15,9 @@ use App\Http\Controllers\ProcController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/register', [ProcController::class, 'regist']);
 
-Route::get('/login', [ProcController::class, 'login']);
+Route::get('/login', [ProcController::class, 'login'])->name('login');

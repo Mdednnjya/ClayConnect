@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'ClayConnect')</title>
+    <link rel="icon" href="{{ asset('images/logo.svg') }}" type="image/icon" />
+    <link href="{{ asset('resources/css/custom.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Encode Sans Semi Expanded' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Scheherazade New' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Crimson Text' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
@@ -16,6 +23,20 @@
             background-color: #FFFCF9;
         }
     </style>
+    <script>
+        function initMap() {
+            var location = {lat: -7.953889, lng: 112.619472};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+
+    </script>
 </head>
 <body >
     @yield('content')
