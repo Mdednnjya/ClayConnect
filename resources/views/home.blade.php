@@ -91,6 +91,6 @@
                 <p style="font-family: 'Scheherazade New'; font-size: 19px;">+62 852-5903-7001</p>
             </div>
         </div>
-
+        @include('partials.footer_main')
     </div>
 @endsection

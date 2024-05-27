@@ -39,7 +39,7 @@
                                 <a href="homepage" class="text-decoration-none px-5 py-1 bg-black w-100 text-center" style="font-family: 'Scheherazade New'; color: white; border-radius: 22px; font-size: 20px;"> <b>Sign In</b> </a>
                             </div>
                             <div class="col-12">
-                                <p class="small mb-0m text-center pt-xl-2 pt-lg-2 pt-xl-2 pt-lg-2">
+                                <p class="small mb-0m mt-sm-2 text-center pt-xl-2 pt-lg-2 pt-xl-2 pt-lg-2">
                                     <span style="color: black; font-size: 15px; font-family: 'Crimson Text'; font-weight: 400; line-height: 24px; word-wrap: break-word">Don't have an account? </span
                                     ><a href="register" class="" style="text-decoration: none"><span style="color: #C36A3F; font-size: 15px; font-family: 'Crimson Text'; font-weight: 400; line-height: 24px; word-wrap: break-word">Sign Up</span></a>
                                 </p>
@@ -60,6 +60,6 @@
             </div>
         </div>
     </body>
-@include('partials.footer_auth');      
+@include('partials.footer_auth');
 
 @endsection
