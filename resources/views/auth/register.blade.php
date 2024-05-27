@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('partials.header_reg');
+    @include('partials.header_auth', ['isLoginPage' => false])
     <body>
         <div class="container mt-3 mb-xl-5 mb-lg-5">
             <section class="section register d-flex flex-column align-items-center justify-content-center py-4">
@@ -49,8 +49,8 @@
                 </div>
                 </div>
             </section>
-        </div>  
+        </div>
     </body>
-    @include('partials.footer_auth');
+    @include('partials.footer_auth')
 
 @endsection
