@@ -1,15 +1,14 @@
 <div class="card d-block d-md-none">
-    <div class="card-header">Account</div>
     <div class="card-body">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown text-center">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Garamond;">
                 Menu
             </button>
-            <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                <li><a class="dropdown-item" href="account">My Account</a></li>
-                <li><a class="dropdown-item" href="wishlist">Wishlist</a></li>
-                <li><a class="dropdown-item" href="history">History</a></li>
-                <li><a class="dropdown-item" href="settings">Settings</a></li>
+            <ul class="dropdown-menu" aria-labelledby="accountDropdown" style="color: black;">
+                <li><a class="dropdown-item" href="account" style="font-family: Garamond;">My Account</a></li>
+                <li><a class="dropdown-item" href="wishlist" style="font-family: Garamond;">Wishlist</a></li>
+                <li><a class="dropdown-item" href="history" style="font-family: Garamond;">History</a></li>
+                <li><a class="dropdown-item" href="settings" style="font-family: Garamond;">Settings</a></li>
             </ul>
         </div>
     </div>
