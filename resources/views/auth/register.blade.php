@@ -9,7 +9,6 @@
                 <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-5 d-flex flex-column align-items-center justify-content-center">
-                    <!-- End Logo -->
 
                     <div class="card mb-5 bg px-5 shadow rounded-2 border-0">
                         <div class="card-body">
@@ -18,7 +17,6 @@
                         </div>
 
                         <form class="row g-xl-3 g-lg-3 g-md-3 g-2 needs-validation" novalidate>
-                            <!-- button -->
                             <div>
                                 <label for="exampleFormControlInput1" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Name</label>
                                 <input type="name" class="form-control" id="exampleFormControlInput1">

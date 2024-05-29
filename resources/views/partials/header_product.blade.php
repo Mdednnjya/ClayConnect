@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-end">
-            <a class="nav-link" href="profil/account">
+            <a class="nav-link" href="profile/account">
                 <img src="{{ asset('images/profil.svg') }}" alt="Profile">
             </a>
         </div>

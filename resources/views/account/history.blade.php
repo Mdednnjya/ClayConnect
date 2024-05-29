@@ -5,6 +5,21 @@
         @include('partials.header_product')
     </header>
 
+    <style>
+        .breadcrumb {
+            font-family: 'Crimson Text', serif;
+            font-size: 16px;
+        }
+
+        .breadcrumb-item a {
+            color: black !important;
+        }
+
+        .breadcrumb-item.active {
+            color: black !important;
+        }
+    </style>
+
     <body>
         <div class="container">
             <nav aria-label="breadcrumb">
@@ -21,8 +36,8 @@
                     @include('account.partials.dropdown')
                 </div>
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">History</div>
+                    <div class="card" >
+                        <div class="card-header" style="background-color: white; font-family: 'Scheherazade New'; font-size: 18px; font-weight: bold; border-bottom: 1px solid black;">History</div>
                         <div class="card-body">
                             <p>Ini adalah halaman History.</p>
                         </div>

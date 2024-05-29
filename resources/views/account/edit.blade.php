@@ -7,6 +7,21 @@
         @include('partials.header_product')
     </header>
 
+    <style>
+        .breadcrumb {
+            font-family: 'Crimson Text', serif;
+            font-size: 16px;
+        }
+
+        .breadcrumb-item a {
+            color: black !important;
+        }
+
+        .breadcrumb-item.active {
+            color: black !important;
+        }
+    </style>
+
     <body>
     <div class="container">
         <nav aria-label="breadcrumb">
@@ -22,16 +37,14 @@
                 @include('account.partials.sidebar')
                 @include('account.partials.dropdown')
             </div>
-            {{--        Column Account settings        --}}
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">My Account</div>
+                <div class="card p-3" style="font-family: 'Crimson Text'">
+                    <div class="card-header" style="background-color: white; font-family: 'Scheherazade New'; font-size: 18px; font-weight: bold; border-bottom: 1px solid black;">Edit Account</div>
                     <div class="card-body">
                         <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group text-center">
-                                <img src="{{ $data['photo'] }}" alt="Profile Photo" class="img-thumbnail rounded-circle mb-3" style="width: 150px; height: 150px;">
-                                <label for="photo">Profile Photo</label>
+                                <img src="{{ asset($data['photo']) }}" alt="Profile Photo" class="img-thumbnail rounded-circle mb-3" style="width: 150px; height: 150px;">
                                 <input type="file" class="form-control-file" id="photo" name="photo">
                             </div>
                             <div class="form-group">

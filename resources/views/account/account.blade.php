@@ -7,6 +7,21 @@
         @include('partials.header_product')
     </header>
 
+    <style>
+        .breadcrumb {
+            font-family: 'Crimson Text', serif;
+            font-size: 16px;
+        }
+
+        .breadcrumb-item a {
+            color: black !important;
+        }
+
+        .breadcrumb-item.active {
+            color: black !important;
+        }
+    </style>
+
     <body>
         <div class="container">
             <nav aria-label="breadcrumb">
@@ -22,16 +37,26 @@
                     @include('account.partials.sidebar')
                     @include('account.partials.dropdown')
                 </div>
-                {{--        Column Account settings        --}}
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">My Account</div>
+                        <div class="card-header" style="background-color: white; font-family: 'Scheherazade New'; font-size: 17px; font-weight: bold; border-bottom: 1px solid black;">My Account</div>
                         <div class="card-body text-center">
-                            <img src="{{ asset($data['photo']) }}" alt="Profile Photo" class="img-thumbnail rounded-circle mb-3" style="width: 150px; height: 150px;">
-                            <p><strong>Name: {{ $data['name'] }}</strong> </p>
-                            <p><strong>Email: {{ $data['email'] }}</strong>
-                            <p><strong>Phone: {{ $data['phone'] }}</strong> </p>
-                            <a href="{{ route('profile.edit') }}" class="btn btn-primary mt-3">Edit Profile</a>
+                            <img src="{{ asset($data['photo']) }}" alt="Profile Photo" class="img-thumbnail rounded-circle mb-1" style="width: 150px; height: 150px;">
+                            <div>
+                                <a href="{{ route('profile.edit') }}" class="" style="font-family: 'Crimson Text'; text-decoration: none; color: gray;">
+                                    <img src="{{ asset('images/account/edit-profil-icon.svg') }}" alt="Edit Profile Icon" style="width: 15px; height: 15px; vertical-align: middle;">
+                                    Edit Profile
+                                </a>
+                            </div>
+                            <div class="m-4">
+                                <p style="font-family: 'Crimson Text'; font-size: 18px">Name:</p>
+                                <p style="font-family: 'Crimson Text'; color: gray; font-size: 16px;">{{ $data['name'] }}
+                                <p style="font-family: 'Crimson Text'; font-size: 18px">Email:</p>
+                                <p style="font-family: 'Crimson Text'; color: gray; font-size: 16px;">{{ $data['email'] }}</p>
+                                <p style="font-family: 'Crimson Text'; font-size: 18px">Phone:</p>
+                                <p style="font-family: 'Crimson Text'; color: gray; font-size: 16px;">{{ $data['phone'] }}</p>
+
+                            </div>
                         </div>
                     </div>
                 </div>
