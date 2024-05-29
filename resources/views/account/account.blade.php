@@ -26,10 +26,12 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">My Account</div>
-                        <div class="card-body">
-                            <p><strong>Name:</strong> </p>
-                            <p><strong>Email:</strong> </p>
-                            <!-- todo: Tambahkan informasi akun lainnya di sini -->
+                        <div class="card-body text-center">
+                            <img src="{{ asset($data['photo']) }}" alt="Profile Photo" class="img-thumbnail rounded-circle mb-3" style="width: 150px; height: 150px;">
+                            <p><strong>Name: {{ $data['name'] }}</strong> </p>
+                            <p><strong>Email: {{ $data['email'] }}</strong>
+                            <p><strong>Phone: {{ $data['phone'] }}</strong> </p>
+                            <a href="{{ route('profile.edit') }}" class="btn btn-primary mt-3">Edit Profile</a>
                         </div>
                     </div>
                 </div>
