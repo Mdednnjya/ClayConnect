@@ -5,7 +5,7 @@
 @include('partials.header_main')
 
 <body>
-    <section class="jumbotron jumbotron-fluid">
+    <section class="section-main">
         <div class="container-fluid overflow-hidden">
             <nav class="col-lg-12 mt-3 mb-4 ms-4" aria-label="breadcrumb">
                 <ol class="ms-5 breadcrumb" style="font-family: 'Crimson Text'; font-size: 18px">
@@ -31,9 +31,9 @@
                                     <h1 style="font-family: 'Scheherazade New'"><b>Vas Bunga Corak</b></h1>
                                     <p class="stock mb-0" style="font-family: 'Crimson Text'; font-size: 20px">Stock: Ready</p>
                             </div>
-                            
+
                             <p class="price mb-5" style="font-family: 'Crimson Text'; font-size: 18px">Rp. 40.000,00</p>
-                        
+
                             <span class="me-3 mb-3 mt-5" style="font-family: 'Scheherazade New'; font-size: 28px"><b>Quantity</b></span>
                             <div class="input-group" style="width: 120px;">
                                 <button class="btn btn-outline-secondary" type="button" id="minus">-</button>

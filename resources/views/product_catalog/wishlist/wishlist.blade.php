@@ -79,7 +79,7 @@
                         </table>
                     </div>
                     <div class="col">
-                        <div class="card" style="background-color: #FFFCF9">
+                        <div class="card shadow" style="background-color: #FFFCF9">
                             <div class="card-header" style="text-align: center; font-weight: bold; background-color: #FFFCF9; border-bottom: none;">
                                 Order Summary (1) Item(s)
                             </div>
@@ -92,7 +92,6 @@
                                         <div class="col-auto p-0">
                                             Rp.40.000.00
                                         </div>
-
                                     </div>
                                     <div class="row d-flex justify-content-between align-items-center">
                                         <div class="col-auto">
@@ -119,7 +118,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </nav>
         </div>

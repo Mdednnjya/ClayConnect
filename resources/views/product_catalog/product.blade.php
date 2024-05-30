@@ -4,7 +4,7 @@
 
 @include('partials.header_main')
 <body>
-    <section class="jumbotron jumbotron-fluid">
+    <section class="section-main">
         <div class="container-fluid overflow-hidden">
             <nav class="col-lg-12 mt-3 mb-5 ms-4 d-flex justify-content-between" aria-label="breadcrumb">
                 <ol class="ms-5 breadcrumb" style="font-family: 'Crimson Text'; font-size: 18px">
