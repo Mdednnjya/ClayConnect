@@ -26,6 +26,10 @@ Route::get('/login', [ProcController::class, 'login'])->name('login');
 
 Route::get('/product', [ProcController::class, 'product'])->name('product');
 
+Route::get('/product/shoppingView', [ProcController::class, 'shoppingView'])->name('shoppingView');
+
+Route::get('/product/shoppingView/shoppingCart', [ProcController::class, 'shoppingCart'])->name('shoppingCart');
+
 Route::get('/profile/account', [AccountController::class, 'profile'])->name('account');
 
 Route::get('/profile/account/edit', [AccountController::class, 'editProfile'])->name('profile.edit');

@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-check"></div>
                         <div class="d-flex justify-content-center">
-                            <a href="homepage" class="text-decoration-none px-5 py-1 bg-black w-100 text-center"
+                            <a href="{{ route('product') }}" class="text-decoration-none px-5 py-1 bg-black w-100 text-center"
                                style="font-family: 'Scheherazade New'; color: white; border-radius: 22px; font-size: 20px;">
                                 <b>Sign In</b> </a>
                         </div>

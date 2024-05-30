@@ -24,6 +24,18 @@ class ProcController extends Controller
         return view('product_catalog.product', compact('googleMapsApiKey'));
     }
 
+    public function shoppingView()
+    {
+        $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+        return view('product_catalog.shoppingView', compact('googleMapsApiKey'));
+    }
+    
+    public function shoppingCart()
+    {
+        $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+        return view('product_catalog.shoppingCart', compact('googleMapsApiKey'));
+    }
+
     public function profil()
     {
         $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
