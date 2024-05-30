@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProcController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,4 @@ Route::get('/profile/history', [ProcController::class, 'history'])->name('histor
 
 Route::get('profile/settings', [ProcController::class, 'settings'])->name('settings');
 
-Route::get('profile/wishlist', [ProcController::class, 'wishlist'])->name('wishlist');
+Route::get('product/wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
