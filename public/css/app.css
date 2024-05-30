@@ -1,0 +1,59 @@
+.card {
+    border: none;
+}
+
+.quantity .input-group {
+    flex-wrap: nowrap;
+}
+
+.text {
+    margin-right: auto;
+}
+
+.arrow {
+    text-decoration: none;
+    color: #333;
+    margin-left: 10px;
+    font-size: 1.3rem;
+}
+
+.reviews .star {
+    color: #ffd700;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1397px) {
+    .filter-collapse {
+        order: 2;
+    }
+}
+
+@media (max-width: 1029px) {
+    .product-image,
+    .product-details,
+    .product-payment {
+        width: 100%;
+    }
+
+    .product-image {
+        order: 1;
+    }
+
+    .product-details {
+        order: 2;
+        margin-top: 20px;
+    }
+
+    .product-payment {
+        order: 3;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1390px) {
+    .navbar-collapse {
+        display: none;
+    }
+}
