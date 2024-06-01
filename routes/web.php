@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/notification', function () {
+    return view('notification');
+})->name('notification');
+
 Route::get('/register', [ProcController::class, 'regist']);
 
 Route::get('/login', [ProcController::class, 'login'])->name('login');
@@ -29,6 +33,10 @@ Route::get('/product', [ProcController::class, 'product'])->name('product');
 Route::get('/product/shoppingView', [ProcController::class, 'shoppingView'])->name('shoppingView');
 
 Route::get('/product/shoppingView/shoppingCart', [ProcController::class, 'shoppingCart'])->name('shoppingCart');
+
+Route::get('/product/shoppingView/shoppingCart/payment', [ProcController::class, 'payment'])->name('payment');
+
+Route::get('/product/shoppingView/shoppingCart/payment/paymentSuccess', [ProcController::class, 'paymentSuccess'])->name('paymentSuccess');
 
 Route::get('/profile/account', [AccountController::class, 'profile'])->name('account');
 

@@ -48,13 +48,15 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="notif" href="#notif">
+                <a class="notif" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img class="nav-link" id="notif" src="{{ asset('images/header/notif.svg') }}">
                 </a>
             </li>
         </ul>
     </div>
 </nav>
+
+@include('partials.notification')
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
     <div class="offcanvas-header">
