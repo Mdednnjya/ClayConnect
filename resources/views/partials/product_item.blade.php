@@ -2,7 +2,7 @@
     <div class="card mx-4 mb-5" style="background-color: #fff5eb;">
         <div class="col-lg-12 d-flex justify-content-center align-items-center" style="margin-top: 100px; margin-bottom: 100px">
             <a class="navbar-brand d-flex" href="#">
-                <img src="{{ URL('images/product_catalog/pict 2.svg') }}" alt="Logo" width="142" height="162" class="d-lg-inline-block" style="margin-left: 10px" />
+                <img src="{{ URL('images/product_catalog/product 1.svg') }}" alt="Logo" width="142" height="162" class="d-lg-inline-block" style="margin-left: 10px" />
             </a>
         </div>
 

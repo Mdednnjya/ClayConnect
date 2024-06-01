@@ -21,7 +21,7 @@
                         <div class="card align-self-end mb-3" style="background-color: #fff5eb;">
                           <div class="d-flex justify-content-center">
                             <a class="" href="#">
-                              <img src="{{ URL('images/product_catalog/pict 2.svg') }}" alt="Logo" class="d-lg-inline-block" style="margin: 130px; width: 275px; height: 456px" />
+                              <img src="{{ URL('images/product_catalog/product 1.svg') }}" alt="Logo" class="d-lg-inline-block" style="margin: 130px; width: 275px; height: 456px" />
                             </a>
                           </div>
                         </div>

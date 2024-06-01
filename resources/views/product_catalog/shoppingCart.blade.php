@@ -11,7 +11,7 @@
                 <ol class="ms-5 breadcrumb" style="font-family: 'Crimson Text'; font-size: 18px">
                     <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: black;">Home</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('product') }}" style="text-decoration: none; color: black;">Product</a></li>
-                    <li class="breadcrumb-item active" aria-current="page" style="color: black;">Shopping View</li>
+                    <li class="breadcrumb-item active" aria-current="page" style="color: black;">Shopping Cart</li>
                 </ol>
             </nav>
             <div class="col-lg-12">
@@ -20,7 +20,7 @@
                         <div class="card align-self-end mb-3" style="background-color: #fff5eb;">
                         <div class="d-flex justify-content-center">
                             <a class="" href="#">
-                            <img src="{{ URL('images/product_catalog/pict 2.svg') }}" alt="Logo" class="d-lg-inline-block" style="margin: 130px; width: 275px; height: 456px" />
+                            <img src="{{ URL('images/product_catalog/product 1.svg') }}" alt="Logo" class="d-lg-inline-block" style="margin: 130px; width: 275px; height: 456px" />
                             </a>
                         </div>
                         </div>
@@ -65,21 +65,21 @@
                     <div class="col-md-4 d-flex justify-content-center align-items-center product-payment">
                         <div class="card mb-4 shadow" style="padding: 30px">
                             <div class="order-summary">
-                                <h2 class="card-title d-flex justify-content-center mb-5">Order Summary (1) Item(s)</h2>
+                                <h2 class="card-title d-flex justify-content-center mb-5" style="font-family: 'Crimson Text'; font-size: 30px"><b>Order Summary (1) Item(s)</b></h2>
                                 <div class="row mb-4">
-                                    <div class="col-6">
+                                    <div class="col-6" style="font-family: 'Crimson Text'; font-size: 17px">
                                         <p class="card-text mb-4">Item(s) Subtotal</p>
                                         <p class="card-text mb-5">Taxes and Fees</p>
                                         <p class="card-text">Subtotal</p>
                                     </div>
-                                    <div class="col-6 text-end">
+                                    <div class="col-6 text-end" style="font-family: 'Crimson Text'; font-size: 17px">
                                         <p class="card-text mb-4">Rp. 40.000,00</p>
                                         <p class="card-text mb-5">Rp. 4.000,00</p>
                                         <p class="card-text">Rp. 44.000,00</p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <a class="btn btn-dark" style="font-family: 'Scheherazade New'; font-size: 20px; width: 85%">Buy Now</a>
+                                    <a class="btn btn-dark" href="{{ route('payment') }}" style="font-family: 'Scheherazade New'; font-size: 20px; width: 85%"><b>Buy Now</b></a>
                                 </div>
                             </div>
                         </div>
