@@ -43,7 +43,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="cart" href="#cart">
+                <a class="cart" href="{{ route('cart.view') }}">
                     <img class="nav-link" id="cart" src="{{ asset('images/header/cart.svg') }}">
                 </a>
             </li>

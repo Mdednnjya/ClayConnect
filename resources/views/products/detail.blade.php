@@ -29,11 +29,11 @@
                       <div class="col-md-4 py-5 product-details">
                         <div class="card align-self-start mb-3 mx-3" style="background-color: #fffcf9; padding: 20px;">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h1 style="font-family: 'Scheherazade New'"><b>Vas Bunga Corak</b></h1>
-                                    <p class="stock mb-0" style="font-family: 'Crimson Text'; font-size: 20px">Stock: Ready</p>
+                                    <h1 style="font-family: 'Scheherazade New'"><b>{{ $product->name }}</b></h1>
+                                    <p class="stock mb-0" style="font-family: 'Crimson Text'; font-size: 20px">Stock: {{ $product->stock }}</p>
                                 </div>
 
-                                <p class="price mb-5" style="font-family: 'Crimson Text'; font-size: 18px">Rp. 40.000,00</p>
+                                <p class="price mb-5" style="font-family: 'Crimson Text'; font-size: 18px">Rp. {{ number_format($product->price, 2) }}</p>
 
                                 <span class="me-3 mb-3 mt-5" style="font-family: 'Scheherazade New'; font-size: 28px"><b>Quantity</b></span>
                                 <div class="input-group d-flex align-items-center justify-content-between mb-3">
@@ -61,6 +61,7 @@
                                 </div>
                                 <div class="reviews">
                                     <span class="star">&#9733;</span>
+                                    <spanclass="star">&#9733;</spanclass=>
                                     <span class="star">&#9733;</span>
                                     <span class="star">&#9733;</span>
                                     <span class="star">&#9733;</span>
@@ -76,4 +77,26 @@
 </body>
 @include('partials.footer_main')
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const minusButton = document.getElementById('minus');
+        const plusButton = document.getElementById('plus');
+        const quantityInput = document.getElementById('quantity-input');
+
+        minusButton.addEventListener('click', function () {
+            const currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        plusButton.addEventListener('click', function () {
+            const currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+    });
+</script>
+
+
 @endsection
+

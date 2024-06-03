@@ -16,28 +16,29 @@
             </nav>
             <div class="col-lg-12">
                 <div class="row">
+                    @foreach($cart->cartItems as $cartItem)
                     <div class="col-md-4 product-image">
                         <div class="card align-self-end mb-3" style="background-color: #fff5eb;">
-                        <div class="d-flex justify-content-center">
-                            <a class="" href="#">
-                            <img src="{{ URL('images/product_catalog/product 1.svg') }}" alt="Logo" class="d-lg-inline-block" style="margin: 130px; width: 275px; height: 456px" />
-                            </a>
-                        </div>
+                            <div class="d-flex justify-content-center">
+                                <a class="" href="#">
+                                    <img src="{{ URL('images/product_catalog/'.$cartItem->product->image) }}" alt="Logo" class="d-lg-inline-block" style="margin: 130px; width: 275px; height: 456px" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4 py-5 product-details">
                         <div class="card align-self-start mb-3 mx-3" style="background-color: #fffcf9; padding: 20px;">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h1 style="font-family: 'Scheherazade New'"><b>Vas Bunga Corak</b></h1>
-                                    <p class="stock mb-0" style="font-family: 'Crimson Text'; font-size: 20px">Stock: Ready</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h1 style="font-family: 'Scheherazade New'"><b>{{ $cartItem->product->name }}</b></h1>
+                                <p class="stock mb-0" style="font-family: 'Crimson Text'; font-size: 20px">Stock: Ready</p>
                             </div>
 
-                            <p class="price mb-5" style="font-family: 'Crimson Text'; font-size: 18px">Rp. 40.000,00</p>
+                            <p class="price mb-5" style="font-family: 'Crimson Text'; font-size: 18px">Rp. {{ number_format($cartItem->product->price, 2) }}</p>
 
                             <span class="me-3 mb-3 mt-5" style="font-family: 'Scheherazade New'; font-size: 28px"><b>Quantity</b></span>
                             <div class="input-group" style="width: 120px;">
                                 <button class="btn btn-outline-secondary" type="button" id="minus">-</button>
-                                <input type="text" class="form-control text-center" id="quantity-input" value="1">
+                                <input type="text" class="form-control text-center" id="quantity-input" value="{{ $cartItem->quantity }}">
                                 <button class="btn btn-outline-secondary" type="button" id="plus">+</button>
                             </div>
                             <div class="mb-2">
@@ -73,23 +74,25 @@
                                         <p class="card-text">Subtotal</p>
                                     </div>
                                     <div class="col-6 text-end" style="font-family: 'Crimson Text'; font-size: 17px">
-                                        <p class="card-text mb-4">Rp. 40.000,00</p>
-                                        <p class="card-text mb-5">Rp. 4.000,00</p>
-                                        <p class="card-text">Rp. 44.000,00</p>
-                                    </div>
+                                        <p class="card-text mb-4">Rp. {{ number_format($cartItem->product->price * $cartItem->quantity,2) }}</p>
+                                    <p class="card-text mb-5">Rp. 4.000,00</p>
+                                    <p class="card-text">Rp. {{ number_format($cartItem->product->price * $cartItem->quantity + 4000, 2) }}</p>
                                 </div>
-                                <div class="d-flex justify-content-center">
-                                    <a class="btn btn-dark" href="{{ route('payment') }}" style="font-family: 'Scheherazade New'; font-size: 20px; width: 85%"><b>Buy Now</b></a>
-                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-dark" href="{{ route('payment') }}" style="font-family: 'Scheherazade New'; font-size: 20px; width: 85%"><b>Buy Now</b></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
+    </div>
     </section>
 </body>
 
 @include('partials.footer_main')
 
 @endsection
+ 
