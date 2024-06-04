@@ -65,6 +65,6 @@ class ProcController extends Controller
     public function wishlist()
     {
         $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
-        return view('account.wishlist', compact('googleMapsApiKey'));
+        return view('product_catalog.wishlist.wishlist', compact('googleMapsApiKey'));
     }
 }

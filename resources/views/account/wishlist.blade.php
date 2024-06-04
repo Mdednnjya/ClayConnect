@@ -2,7 +2,7 @@
 
 @section('content')
     <header>
-        @include('partials.header_product')
+        @include('partials.header_main')
     </header>
 
     <style>
@@ -25,8 +25,8 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="">Home</a></li>
-                    <li class="breadcrumb-item"><a href="">My Account</a></li>
+                    <li class="breadcrumb-item"><a href="/" style="text-decoration: none;">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('account') }}" style="text-decoration: none;">My Account</a></li>t</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
                 </ol>
             </nav>
