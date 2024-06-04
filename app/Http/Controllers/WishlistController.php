@@ -9,6 +9,6 @@ class WishlistController extends Controller
     public function wishlist()
     {
         $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
-        return view('product_catalog.wishlist.wishlist', compact('googleMapsApiKey'));
+        return view('products.wishlist.wishlist', compact('googleMapsApiKey'));
     }
 }

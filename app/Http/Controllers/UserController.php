@@ -24,7 +24,8 @@ class UserController extends Controller
             ];
 
             // Kirim data ke tampilan account.account
-            return view('account.account')->with('data', $data);
+            $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+            return view('account.account', compact('googleMapsApiKey'))->with('data', $data);
         } else {
             // Jika pengguna tidak masuk, redirect ke halaman login atau tindakan lainnya
             return redirect()->route('login');
@@ -80,7 +81,7 @@ class UserController extends Controller
             }
 
             // Simpan perubahan data pengguna
-            //$user->save();
+            $user->save();
 
             // Redirect kembali ke halaman profil pengguna
             return redirect()->route('account');
@@ -110,21 +111,37 @@ class UserController extends Controller
                 return redirect()->route('account');
         }
     }
-    public function login(Request $request)
-{
-    $credentials = $request->only('email', 'password');
 
-    if (Auth::attempt($credentials)) {
-        // Jika berhasil login
-        return redirect()->intended('dashboard');
+    public function showLogin()
+    {
+        // Tampilkan halaman login
+        $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+        return view('auth.login', compact('googleMapsApiKey'));
     }
 
-    // Jika login gagal
-    return back()->withErrors([
-        'email' => 'The provided credentials do not match our records.',
-    ]);
-}
-public function register(Request $request)
+    public function showRegister()
+    {
+        // Tampilkan halaman register
+        $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+        return view('auth.register', compact('googleMapsApiKey'));
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Jika berhasil login
+            return redirect()->route('home');
+        }
+
+        // Jika login gagal
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
+
+    public function register(Request $request)
 {
     $request->validate([
         'name' => 'required|string|max:255',
@@ -132,15 +149,17 @@ public function register(Request $request)
         'password' => 'required|string|min:8|confirmed',
     ]);
 
+    // Buat pengguna baru
     User::create([
         'name' => $request->name,
         'email' => $request->email,
+        'phone_number' => $request->phone,
         'password' => Hash::make($request->password),
     ]);
 
-    // Jika berhasil mendaftar, langsung login
-    Auth::attempt($request->only('email', 'password'));
+    // Alihkan ke halaman login setelah registrasi berhasil
+    return redirect()->route('login')->with('success', 'Registration successful! Please login.');
+}
 
-    return redirect()->intended('dashboard');
 }
-}
+

@@ -20,37 +20,45 @@
                 <!-- input form here -->
                 <!-- yellow -->
                 <div class="form px-4 pb-3">
-                    <form>
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <!-- Display error messages -->
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <div class="mb-4">
                             <!-- form untuk email -->
-                            <label for="email" class="form-label" style="font-size: 18px; font-family: 'Crimson Text'">Email
-                                or Phone</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"/>
+                            <label for="email" class="form-label" style="font-size: 18px; font-family: 'Crimson Text'">Email or Phone</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="{{ old('email') }}" required />
                         </div>
                         <div class="mb-3">
                             <!-- form untuk pw -->
-                            <label for="exampleInputPassword1" class="form-label"
-                                   style="font-size: 18px; font-family: 'Crimson Text'">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"/>
+                            <label for="password" class="form-label" style="font-size: 18px; font-family: 'Crimson Text'">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required />
                         </div>
                         <div class="text-left">
-                            <a href="#" class="text-decoration-none"
-                               style="color: black; font-size: 15px; font-family: 'Crimson Text'; font-weight: 400;">Forgot
-                                password?</a>
+                            <a href="#" class="text-decoration-none" style="color: black; font-size: 15px; font-family: 'Crimson Text'; font-weight: 400;">Forgot password?</a>
                         </div>
                         <div class="form-check"></div>
                         <div class="d-flex justify-content-center">
-                            <a href="{{ route('products.index') }}" class="text-decoration-none px-5 py-1 bg-black w-100 text-center"
-                               style="font-family: 'Scheherazade New'; color: white; border-radius: 22px; font-size: 20px;">
-                                <b>Sign In</b> </a>
+                            <button type="submit" class="text-decoration-none px-5 py-1 bg-black w-100 text-center" style="font-family: 'Scheherazade New'; color: white; border-radius: 22px; font-size: 20px;">
+                                <b>Sign In</b>
+                            </button>
                         </div>
                         <div class="col-12">
-                            <p class="small mb-0m mt-sm-2 text-center pt-xl-2 pt-lg-2 pt-xl-2 pt-lg-2">
-                                        <span
-                                            style="color: black; font-size: 15px; font-family: 'Crimson Text'; font-weight: 400; line-height: 24px; word-wrap: break-word">Don't have an account? </span
-                                        ><a href="register" class="" style="text-decoration: none"><span
-                                        style="color: #C36A3F; font-size: 15px; font-family: 'Crimson Text'; font-weight: 400; line-height: 24px; word-wrap: break-word">Sign Up</span></a>
+                            <p class="small mb-0 mt-sm-2 text-center pt-xl-2 pt-lg-2 pt-xl-2 pt-lg-2">
+                                <span style="color: black; font-size: 15px; font-family: 'Crimson Text'; font-weight: 400; line-height: 24px; word-wrap: break-word">Don't have an account? </span>
+                                <a href="{{ route('register') }}" class="text-decoration-none">
+                                    <span style="color: #C36A3F; font-size: 15px; font-family: 'Crimson Text'; font-weight: 400; line-height: 24px; word-wrap: break-word">Sign Up</span>
+                                </a>
                             </p>
                         </div>
                     </form>
@@ -70,6 +78,5 @@
     </div>
     </body>
     @include('partials.footer_auth')
-
 
 @endsection

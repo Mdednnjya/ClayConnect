@@ -16,26 +16,42 @@
                             <p class="card-title text-center pb-0" style="font-family: Garamond; font-size: 30px">Create New Account</p>
                         </div>
 
-                        <form class="row g-xl-3 g-lg-3 g-md-3 g-2 needs-validation" novalidate>
-                            <div>
-                                <label for="exampleFormControlInput1" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Name</label>
-                                <input type="name" class="form-control" id="exampleFormControlInput1">
+                        <!-- Display error messages -->
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
-                            <div >
-                                <label for="exampleFormControlInput1" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                        @endif
+
+                        <form class="row g-xl-3 g-lg-3 g-md-3 g-2 needs-validation" novalidate method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div>
+                                <label for="name" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
                             </div>
                             <div>
-                                <label for="exampleFormControlInput1" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Phone</label>
-                                <input type="phone" class="form-control" id="exampleFormControlInput1">
+                                <label for="email" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
                             </div>
                             <div>
-                                <label for="exampleFormControlInput1" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Password</label>
-                                <input type="password" class="form-control" aria-describedby="passwordHelpBlock">
+                                <label for="phone" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required>
+                            </div>
+                            <div>
+                                <label for="password" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div>
+                                <label for="password_confirmation" style="font-family: 'Crimson Text'; font-size: 18px" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
                             </div>
                             <div class="col-12 mt-5">
                                 <p class="small mb-0 text-center pt-xl-2 pt-lg-2">
-                                    <a href="login" class="btn btn-dark text-decoration-none px-5 py-1 bg-black" style="font-family: 'Scheherazade New'; color: white; border-radius: 22px; font-size: 16px;"><b>Create an account</b></a>
+                                    <button type="submit" class="btn btn-dark text-decoration-none px-5 py-1 bg-black" style="font-family: 'Scheherazade New'; color: white; border-radius: 22px; font-size: 16px;"><b>Create an account</b></button>
                                 </p>
                             </div>
                             <div class="input-group mb-3">

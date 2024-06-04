@@ -9,7 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductReviewController;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,10 +29,16 @@ Route::get('/notification', function () {
     return view('notification');
 })->name('notification');
 
-//authentication
-Route::get('/register', [UserController::class, 'register'])->name('register');
 
-Route::get('/login', [UserController::class, 'login'])->name('login');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//authentication
+Route::get('/login', [UserController::class, 'showLogin'])->name('login');
+Route::post('/login', [UserController::class, 'login']);
+Route::get('/register', [UserController::class, 'showRegister'])->name('register');
+Route::post('/register', [UserController::class, 'register']);
+Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
 
 //product route
 

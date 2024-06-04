@@ -10,7 +10,7 @@
                     <a class="nav-link" href="/" id="home" style="font-family: 'Lato'; font-size: 20px; text-decoration: none; color: black; transition: color 0.3s;" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Home</a>
                 </li>
                 <li class="nav-item d-flex justify-content-center align-items-center">
-                    <a class="nav-link" href="{{ route('product') }}" id="product" style="font-family: 'Lato'; font-size: 20px; text-decoration: none; color: black; transition: color 0.3s;" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Product</a>
+                    <a class="nav-link" href="{{ route('products.index') }}" id="product" style="font-family: 'Lato'; font-size: 20px; text-decoration: none; color: black; transition: color 0.3s;" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Product</a>
                 </li>
                 <li class="nav-item mr-2 d-flex justify-content-center align-items-center">
                     <a class="search" href="#search">
@@ -70,7 +70,7 @@
                 <a class="nav-link" href="/" id="home" style="font-family: 'Lato'; font-size: 20px; text-decoration: none; color: black; transition: color 0.3s;" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('product') }}" id="product" style="font-family: 'Lato'; font-size: 20px; text-decoration: none; color: black; transition: color 0.3s;" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Product</a>
+                <a class="nav-link" href="{{ route('products.index') }}" id="product" style="font-family: 'Lato'; font-size: 20px; text-decoration: none; color: black; transition: color 0.3s;" onmouseover="this.style.color='gray'" onmouseout="this.style.color='black'">Product</a>
             </li>
         </ul>
     </div>

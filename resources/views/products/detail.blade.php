@@ -10,7 +10,7 @@
             <nav class="col-lg-12 mt-3 mb-4 ms-4" aria-label="breadcrumb">
                 <ol class="ms-5 breadcrumb" style="font-family: 'Crimson Text'; font-size: 18px">
                     <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: black;">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('product') }}" style="text-decoration: none; color: black;">Product</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('products.show') }}" style="text-decoration: none; color: black;">Product</a></li>
                     <li class="breadcrumb-item active" aria-current="page" style="color: black;">View</li>
                 </ol>
 
