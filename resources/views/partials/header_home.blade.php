@@ -1,8 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid px-5 py-4">
-        <div class="col-md-3">
-            <a class="navbar-brand" href="#" style="font-family: 'Encode Sans Semi Expanded'; font-size: 32px;" id="brand-logo">Clay-Connect</a>
-        </div>
+        <a class="navbar-brand" href="#" style="font-family: 'Encode Sans Semi Expanded'; font-size: 32px;" id="brand-logo">Clay-Connect</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>

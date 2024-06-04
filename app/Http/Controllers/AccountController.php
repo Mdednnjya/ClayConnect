@@ -68,7 +68,7 @@ class AccountController extends Controller
         switch ($subpage) {
             case 'wishlist':
                 $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
-                return view('account.wishlist', compact('googleMapsApiKey'));
+                return view('product_catalog.wishlist.wishlist', compact('googleMapsApiKey'));
                 break;
             case 'history':
                 $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
