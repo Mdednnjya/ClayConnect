@@ -32,7 +32,7 @@
                                 <h6 class="card-subtitle mb-3 text-body-secondary" style="font-family: 'Crimson Text'; font-size: 18px"><b>Price Range</b></h6>
                                 <div class="row align-items-center mb-4">
                                     <div class="col input-group">
-                                        <span class="input-group-text text-center" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">Rp. 0</span>
+                                        <span class="input-group-text text-center" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black" id="minPriceTextMobile">Rp. 0</span>
                                     </div>
                                     <div class="col">
                                         <p style="border-top: 2px solid black; margin-bottom: 0; width: 100%"></p>
@@ -41,8 +41,8 @@
                                         <span class="input-group-text" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">Rp. 100.000</span>
                                     </div>
                                 </div>
-                                <div class="mb-4">
-                                    <input type="range" class="form-range" min="0" max="100000" step="5000" id="priceRange" value="0">
+                                <div class="mb-4 position-relative">
+                                    <input type="range" id="rangeInputMobile" min="0" max="10" value="0" class="form-range">
                                 </div>
                                 <hr style="border-top: 2px solid black; margin-bottom: 20px;">
                             </div>
@@ -67,7 +67,6 @@
                             </div>
                         </div>
                     </div>
-            
                     <div class="col-lg-3 d-none d-lg-block product-filter">
                         <div class="col-lg-12 mx-auto" style="width: 90%">
                             <div class="card" style="background-color: #f4f2f0">
@@ -86,7 +85,7 @@
                                     <h6 class="card-subtitle mb-3 text-body-secondary" style="font-family: 'Crimson Text'; font-size: 18px"><b>Price Range</b></h6>
                                     <div class="row align-items-center mb-4">
                                         <div class="col input-group">
-                                            <span class="input-group-text text-center" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">Rp. 0</span>
+                                            <span class="input-group-text text-center" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black" id="minPriceText">Rp. 0</span>
                                         </div>
                                         <div class="col">
                                             <p style="border-top: 2px solid black; margin-bottom: 0; width: 100%"></p>
@@ -95,8 +94,8 @@
                                             <span class="input-group-text" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">Rp. 100.000</span>
                                         </div>
                                     </div>
-                                    <div class="mb-4">
-                                        <input type="range" class="form-range" min="0" max="100000" step="5000" id="priceRange" value="0">
+                                    <div class="mb-4 position-relative">
+                                        <input type="range" id="rangeInput" min="0" max="10" value="0" class="form-range">
                                     </div>
                                     <hr style="border-top: 2px solid black; margin-bottom: 20px;">
                                 </div>

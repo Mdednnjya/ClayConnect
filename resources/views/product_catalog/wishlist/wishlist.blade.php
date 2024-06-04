@@ -3,7 +3,7 @@
 
 @section('content')
     <header>
-        @include('partials.header_product')
+        @include('partials.header_main')
     </header>
 
     <style>
@@ -32,8 +32,8 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="">Home</a></li>
-                    <li class="breadcrumb-item"><a href="">Product</a></li>
+                    <li class="breadcrumb-item"><a href="/" style="text-decoration: none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('product') }}" style="text-decoration: none">Product</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
                 </ol>
 
@@ -111,9 +111,9 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <div class="btn mx-5 rounded-5" style="background-color: black; color: white; font-family: 'Scheherazade New'; display: inline-block; width: auto;">
+                                    <a class="btn mx-5 rounded-5" href="{{ route('payment') }}" style="background-color: black; color: white; font-family: 'Scheherazade New'; display: inline-block; width: auto;">
                                         <span class="m-5">Buy</span>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
