@@ -16,6 +16,11 @@
                     <a class="search" href="#search">
                         <img class="nav-link" id="search" src="{{ asset('images/header/search.svg') }}">
                     </a>
+                    <div id="searchBox" style="display: none;">
+                        <input type="text" placeholder="Search Product" value="">
+                        <input type="submit" value="search">
+                        <button id="closeSearch">X</button>
+                    </div>
                 </li>
                 <li class="nav-item mr-2 d-flex justify-content-center align-items-center">
                     <a class="cart" href="{{ route('wishlist') }}">
@@ -45,11 +50,6 @@
             <img src="{{ asset('images/profil.svg') }}" id="profile" class="d-inline-block align-text-top">
         </a>
         <div class="icon-container d-flex justify-content-between align-items-center mx-auto">
-            <li class="nav-item ml-4 mr-5 d-flex justify-content-center align-items-center">
-                <a class="search" href="#search">
-                    <img class="nav-link" id="search" src="{{ asset('images/header/search.svg') }}">
-                </a>
-            </li>
             <li class="nav-item mr-5 d-flex justify-content-center align-items-center">
                 <a class="cart" href="{{ route('wishlist') }}">
                     <img class="nav-link" id="cart" src="{{ asset('images/header/cart.svg') }}">
@@ -63,7 +63,7 @@
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    
+
     <div class="offcanvas-body">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -90,4 +90,22 @@
 
     mediaQuery.addListener(handleMediaQueryChange);
     handleMediaQueryChange(mediaQuery);
+
+    const searchIcon = document.querySelector('.search');
+    const closeSearch = document.getElementById('closeSearch');
+    const searchBox = document.getElementById('searchBox');
+    const navItems = document.querySelectorAll('.nav-item:not(.search)');
+
+    searchIcon.addEventListener('click', (event) => {
+        event.preventDefault();
+        searchBox.style.display = 'block';
+        searchIcon.style.display = 'none';
+        navItems.forEach(item => item.style.display = 'none');
+    });
+
+    closeSearch.addEventListener('click', () => {
+        searchBox.style.display = 'none';
+        searchIcon.style.display = 'flex';
+        navItems.forEach(item => item.style.display = 'flex');
+    });
 </script>
