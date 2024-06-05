@@ -62,6 +62,7 @@ Route::get('product/wishlist', [WishlistController::class, 'wishlist'])->name('w
 // Product Routes
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/products/payment', [ProductController::class, 'payment'])->name('products.payment');
 
 // Cart Routes
 //Route::middleware('auth')->group(function() {

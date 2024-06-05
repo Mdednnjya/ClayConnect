@@ -57,39 +57,41 @@ class UserController extends Controller
 
     public function updateProfile(Request $request)
     {
-        // Cek apakah pengguna telah masuk
-        if (Auth::check()) {
-            $user = Auth::user();
+    // Cek apakah pengguna telah masuk
+    if (Auth::check()) {
+        $user = Auth::user();
 
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255',
-                'phone' => 'required|string|max:20',
-                'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            ]);
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'phone' => 'required|string|max:20',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-            // Ubah data pengguna sesuai input yang divalidasi
-            $user->name = $validatedData['name'];
-            $user->email = $validatedData['email'];
-            $user->phone_number = $validatedData['phone'];
+        // Ubah data pengguna sesuai input yang divalidasi
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
+        $user->phone_number = $validatedData['phone'];
 
-            // Jika ada file foto diinput, simpan dan ubah foto profil
-            if ($request->hasFile('photo')) {
-                $photoName = time().'.'.$request->photo->extension();
-                $request->photo->move(public_path('photos'), $photoName);
-                $user->profile_picture = 'photos/'.$photoName;
-            }
-
-            // Simpan perubahan data pengguna
-            $user->save();
-
-            // Redirect kembali ke halaman profil pengguna
-            return redirect()->route('account');
-        } else {
-            // Jika pengguna tidak masuk, redirect ke halaman login atau tindakan lainnya
-            return redirect()->route('login');
+        // Jika ada file foto diinput, simpan dan ubah foto profil
+        if ($request->hasFile('photo')) {
+            $photoName = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('image/profile_picture'), $photoName);
+            $user->profile_picture = 'image/profile_picture/'.$photoName;
         }
+
+        // Simpan perubahan data pengguna
+        $user->save();
+
+        // Redirect kembali ke halaman profil pengguna
+        return redirect()->route('account');
+    } else {
+        // Jika pengguna tidak masuk, redirect ke halaman login atau tindakan lainnya
+        return redirect()->route('login');
     }
+    }
+
+
 
     public function show($subpage)
     {

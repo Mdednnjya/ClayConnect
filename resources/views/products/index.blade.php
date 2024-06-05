@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @include('partials.header_main')
+@include('partials.header_main')
 
 <body>
     <section class="section-main">
@@ -22,30 +22,33 @@
                                 <h5 class="card-title mb-3" style="font-family: Garamond; font-size: 25px"><b>Showing Item</b></h5>
                                 <hr style="border-top: 2px solid black; margin-bottom: 20px;">
                                 <h6 class="card-subtitle mb-3 text-body-secondary" style="font-family: 'Crimson Text'; font-size: 18px"><b>Colors</b></h6>
-                                <div class="d-flex justify-content-center justify-content-between mb-4">
-                                    <a href="#" class="btn" style="background-color: #EBEEEB; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                    <a href="#" class="btn" style="background-color: #E4996D; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                    <a href="#" class="btn" style="background-color: #6392BC; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                    <a href="#" class="btn" style="background-color: #666B6F; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                    <a href="#" class="btn" style="background-color: #9B7354; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                </div>
+                                <!-- Color filter -->
+                                <form action="{{ route('products.index') }}" method="GET">
+                                    <div class="d-flex justify-content-center justify-content-between mb-4">
+                                        <button type="submit" name="color" value="EBEEEB" class="btn" style="background-color: #EBEEEB; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                        <button type="submit" name="color" value="E4996D" class="btn" style="background-color: #E4996D; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                        <button type="submit" name="color" value="6392BC" class="btn" style="background-color: #6392BC; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                        <button type="submit" name="color" value="666B6F" class="btn" style="background-color: #666B6F; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                        <button type="submit" name="color" value="9B7354" class="btn" style="background-color: #9B7354; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                    </div>
+                                </form>
                                 <hr style="border-top: 2px solid black; margin-bottom: 20px;">
+                                <!-- Price range filter -->
                                 <h6 class="card-subtitle mb-3 text-body-secondary" style="font-family: 'Crimson Text'; font-size: 18px"><b>Price Range</b></h6>
-                                <div class="row align-items-center mb-4">
-                                    <div class="col input-group">
-                                        <span class="input-group-text text-center" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black" id="minPriceTextMobile">Rp. 0</span>
+                                <form action="{{ route('products.index') }}" method="GET">
+                                    <div class="row align-items-center mb-4">
+                                        <div class="col input-group">
+                                            <input type="number" name="min_price" class="form-control" placeholder="Min Price" style="font-family: 'Crimson Text'; font-size: 16px; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">
+                                        </div>
+                                        <div class="col">
+                                            <p style="border-top: 2px solid black; margin-bottom: 0; width: 100%"></p>
+                                        </div>
+                                        <div class="col input-group">
+                                            <input type="number" name="max_price" class="form-control" placeholder="Max Price" style="font-family: 'Crimson Text'; font-size: 16px; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <p style="border-top: 2px solid black; margin-bottom: 0; width: 100%"></p>
-                                    </div>
-                                    <div class="col input-group">
-                                        <span class="input-group-text" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">Rp. 100.000</span>
-                                    </div>
-                                </div>
-                                <div class="mb-4 position-relative">
-                                    <input type="range" id="rangeInputMobile" min="0" max="10" value="0" class="form-range">
-                                </div>
-                                <hr style="border-top: 2px solid black; margin-bottom: 20px;">
+                                    <button type="submit" class="btn btn-dark" style="font-family: 'Scheherazade New';color: white; border-radius: 22px; font-size: 16px;">Apply</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -61,7 +64,7 @@
                                 <div class="card mx-4 mb-5" style="background-color: #fff5eb;">
                                     <div class="col-lg-12 d-flex justify-content-center align-items-center" style="margin-top: 100px; margin-bottom: 100px">
                                         <a class="navbar-brand d-flex" href="{{ route('products.show', ['id' => $product->id]) }}">
-                                            <img src="{{ URL('images/product_catalog/'.$product->image) }}" alt="Logo" width="142" height="162" class="d-lg-inline-block" style="margin-left: 10px" />
+                                            <img src="{{ asset('images/product_catalog/'.$product->image) }}" alt="Logo" width="142" height="162" class="d-lg-inline-block" style="margin-left: 10px" />
                                         </a>
                                     </div>
 
@@ -89,30 +92,31 @@
                                     <h5 class="card-title mb-3" style="font-family: Garamond; font-size: 25px"><b>Showing Item</b></h5>
                                     <hr style="border-top: 2px solid black; margin-bottom: 20px;">
                                     <h6 class="card-subtitle mb-3 text-body-secondary" style="font-family: 'Crimson Text'; font-size: 18px"><b>Colors</b></h6>
-                                    <div class="d-flex justify-content-center justify-content-between mb-4">
-                                        <a href="#" class="btn" style="background-color: #EBEEEB; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                        <a href="#" class="btn" style="background-color: #E4996D; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                        <a href="#" class="btn" style="background-color: #6392BC; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                        <a href="#" class="btn" style="background-color: #666B6F; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                        <a href="#" class="btn" style="background-color: #9B7354; width: 30px; height: 30px; border-radius: 0; border-color: black"></a>
-                                    </div>
+                                    <form action="{{ route('products.index') }}" method="GET">
+                                        <div class="d-flex justify-content-center justify-content-between mb-4">
+                                            <button type="submit" name="color" value="EBEEEB" class="btn" style="background-color: #EBEEEB; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                            <button type="submit" name="color" value="E4996D" class="btn" style="background-color: #E4996D; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                            <button type="submit" name="color" value="6392BC" class="btn" style="background-color: #6392BC; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                            <button type="submit" name="color" value="666B6F" class="btn" style="background-color: #666B6F; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                            <button type="submit" name="color" value="9B7354" class="btn" style="background-color: #9B7354; width: 30px; height: 30px; border-radius: 0; border-color: black"></button>
+                                        </div>
+                                    </form>
                                     <hr style="border-top: 2px solid black; margin-bottom: 20px;">
                                     <h6 class="card-subtitle mb-3 text-body-secondary" style="font-family: 'Crimson Text'; font-size: 18px"><b>Price Range</b></h6>
-                                    <div class="row align-items-center mb-4">
-                                        <div class="col input-group">
-                                            <span class="input-group-text text-center" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black" id="minPriceText">Rp. 0</span>
+                                    <form action="{{ route('products.index') }}" method="GET">
+                                        <div class="row align-items-center mb-4">
+                                            <div class="col input-group">
+                                                <input type="number" name="min_price" class="form-control" placeholder="Min Price" style="font-family: 'Crimson Text'; font-size: 16px; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">
+                                            </div>
+                                            <div class="col">
+                                                <p style="border-top: 2px solid black; margin-bottom: 0; width: 100%"></p>
+                                            </div>
+                                            <div class="col input-group">
+                                                <input type="number" name="max_price" class="form-control" placeholder="Max Price" style="font-family: 'Crimson Text'; font-size: 16px; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">
+                                            </div>
                                         </div>
-                                        <div class="col">
-                                            <p style="border-top: 2px solid black; margin-bottom: 0; width: 100%"></p>
-                                        </div>
-                                        <div class="col input-group">
-                                            <span class="input-group-text" style="font-family: 'Crimson Text'; font-size: 16px; width: 100%; background-color: #f4f2f0; border-radius: 20px; border: 2px solid black">Rp. 100.000</span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-4 position-relative">
-                                        <input type="range" id="rangeInput" min="0" max="10" value="0" class="form-range">
-                                    </div>
-                                    <hr style="border-top: 2px solid black; margin-bottom: 20px;">
+                                        <button type="submit" class="btn btn-dark" style="font-family: 'Scheherazade New';color: white; border-radius: 22px; font-size: 16px;">Apply</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -125,4 +129,3 @@
 @include('partials.footer_main')
 
 @endsection
-

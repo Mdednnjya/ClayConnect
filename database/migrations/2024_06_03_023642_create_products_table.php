@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->text('description');
             $table->string('color');
-            $table->string('image');
+            $table->string('image')->move('public/images/product_catalog');
             $table->integer('stock');
             $table->timestamps();
         });

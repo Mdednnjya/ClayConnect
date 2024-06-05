@@ -9,17 +9,26 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
+
         $products = Product::query();
+        $query = Product::query();
 
+        // Filter by search keyword
+        if ($request->has('search')) {
+            $query->where('name', 'like', '%' . $request->input('search') . '%');
+        }
+
+        // Filter by color
         if ($request->has('color')) {
-            $products->where('color', $request->color);
+            $query->where('color', $request->input('color'));
         }
 
-        if ($request->has('price_min') && $request->has('price_max')) {
-            $products->whereBetween('price', [$request->price_min, $request->price_max]);
+        // Filter by price range
+        if ($request->has('min_price') && $request->has('max_price')) {
+            $query->whereBetween('price', [$request->input('min_price'), $request->input('max_price')]);
         }
+        $products = $query->paginate(9);
         $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
-        $products = Product::paginate(9);
         return view('products.index', compact('googleMapsApiKey'))->with('products', $products);
     }
 
@@ -31,6 +40,11 @@ class ProductController extends Controller
         }
         $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
         return view('products.detail', compact('googleMapsApiKey'))->with('product', $product);
+    }
+    public function payment()
+    {
+        $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+        return view('products.payment.payment', compact('googleMapsApiKey'));
     }
 }
 

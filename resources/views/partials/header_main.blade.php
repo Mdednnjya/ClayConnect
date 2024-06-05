@@ -17,13 +17,14 @@
                         <img class="nav-link" id="search" src="{{ asset('images/header/search.svg') }}">
                     </a>
                     <div id="searchBox" style="display: none;">
-                        <input type="text" placeholder="Search Product" value="">
-                        <input type="submit" value="search">
+                        <input type="text" placeholder="Search Product" id="searchInput" value="">
+                        <button id="searchButton">Search</button>
                         <button id="closeSearch">X</button>
                     </div>
                 </li>
+
                 <li class="nav-item mr-2 d-flex justify-content-center align-items-center">
-                    <a class="cart" href="{{ route('wishlist') }}">
+                    <a class="cart" href="{{ route('cart.view') }}">
                         <img class="nav-link" id="cart" src="{{ asset('images/header/cart.svg') }}">
                     </a>
                 </li>
@@ -34,7 +35,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="navbar-brand" href="{{ route('account') }}">
-                        <img src="{{ asset('images/profil.svg') }}" id="profile" class="d-inline-block align-text-top">
+                        <img src="{{ asset(Auth::user()->profile_picture) }}" id="profile" class="d-inline-block align-text-top" style="width: 40px; height: 40px;">
                     </a>
                 </li>
             </ul>
@@ -77,23 +78,11 @@
 </div>
 
 <script>
-    const brandLogo = document.getElementById('brand-logo');
-    const mediaQuery = window.matchMedia('(max-width: 992px)');
-
-    function handleMediaQueryChange(e) {
-        if (e.matches) {
-            brandLogo.style.fontSize = '22px';
-        } else {
-            brandLogo.style.fontSize = '32px';
-        }
-    }
-
-    mediaQuery.addListener(handleMediaQueryChange);
-    handleMediaQueryChange(mediaQuery);
-
     const searchIcon = document.querySelector('.search');
     const closeSearch = document.getElementById('closeSearch');
     const searchBox = document.getElementById('searchBox');
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
     const navItems = document.querySelectorAll('.nav-item:not(.search)');
 
     searchIcon.addEventListener('click', (event) => {
@@ -108,4 +97,13 @@
         searchIcon.style.display = 'flex';
         navItems.forEach(item => item.style.display = 'flex');
     });
+
+    searchButton.addEventListener('click', () => {
+        const searchValue = searchInput.value.trim().toLowerCase();
+        if (searchValue !== '') {
+            // Redirect to products index page with search query
+            window.location.href = `{{ route('products.index') }}?search=${searchValue}`;
+        }
+    });
 </script>
+

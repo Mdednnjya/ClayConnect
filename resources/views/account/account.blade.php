@@ -41,7 +41,7 @@
                     <div class="card">
                         <div class="card-header" style="background-color: white; font-family: 'Scheherazade New'; font-size: 17px; font-weight: bold; border-bottom: 1px solid black;">My Account</div>
                         <div class="card-body text-center">
-                            <img src="{{ asset($data['photo']) }}" alt="Profile Photo" class="img-thumbnail rounded-circle mb-1" style="width: 150px; height: 150px;">
+                        <img src="{{ asset($data['photo']) }}" alt="Profile Photo" class="img-thumbnail rounded-circle mb-1" style="width: 150px; height: 150px;">
                             <div>
                                 <a href="{{ route('profile.edit') }}" class="" style="font-family: 'Crimson Text'; text-decoration: none; color: gray;">
                                     <img src="{{ asset('images/account/edit-profil-icon.svg') }}" alt="Edit Profile Icon" style="width: 15px; height: 15px; vertical-align: middle;">
