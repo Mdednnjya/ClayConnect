@@ -71,14 +71,15 @@
                                                 </div>
                                                 <hr>
                                                 <div class="row">
-                                                    <div class="row my-1 d-flex justify-content-between align-items-center">
-                                                        <div class="col-auto">
-                                                            Transaction Date
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            {{ $order->created_at->format('l, d F Y') }}
-                                                        </div>
+                                                <div class="row my-1 d-flex justify-content-between align-items-center">
+                                                    <div class="col-auto">
+                                                        Transaction Date
                                                     </div>
+                                                    <div class="col-auto">
+                                                        {{ $order->created_at->format('l, d F Y H:i:s') }} <!-- Tambahkan format jam di sini -->
+                                                    </div>
+                                                </div>
+
                                                     <div class="row my-1 d-flex justify-content-between align-items-center">
                                                         <div class="col-auto">
                                                             Payment Method
