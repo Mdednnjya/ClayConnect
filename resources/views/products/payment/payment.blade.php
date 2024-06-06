@@ -106,16 +106,25 @@
                             </div>
                             
                             <div class="d-flex justify-content-center">
-                            <form action="{{ route('payment.placeOrder')}}" method="POST">
-                                @csrf
-                                <button type="submit" class="btn btn-dark" style="font-family: 'Scheherazade New'; font-size: 20px; width: 85%">Payment Now</button>
-                            </form>
+                                <form id="placeOrderForm" action="{{ route('payment.placeOrder')}}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-dark" style="font-family: 'Scheherazade New'; font-size: 20px; width: 85%">Payment Now</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('error'))
+                alert('{{ session('error') }}');
+            @endif
+        });
+    </script>
 </body>
 
 @include('partials.footer_main')
