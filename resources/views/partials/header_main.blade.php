@@ -35,7 +35,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="navbar-brand" href="{{ route('account') }}">
-                        <img src="{{ asset(Auth::user()->profile_picture) }}" id="profile" class="d-inline-block align-text-top" style="width: 40px; height: 40px;">
+                        <img src="{{ asset(Auth::user()->profile_picture) }}" id="profile" class="d-inline-block align-text-top rounded-circle" style="width: 40px; height: 40px;">
                     </a>
                 </li>
             </ul>
