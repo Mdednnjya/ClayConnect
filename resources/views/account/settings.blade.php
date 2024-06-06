@@ -135,7 +135,10 @@
                                     </div>
                                 </div>
                                 <div class="row my-5 justify-content-center">
-                                    <div class="btn mx-5" style="background-color: black; color: white; font-family: 'Scheherazade New'; display: inline-block; width: auto;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <div class="btn mx-5" style="background-color: black; color: white; font-family: 'Scheherazade New'; display: inline-block; width: auto;" onclick="logout()">
                                         <span class="m-5">Logout</span>
                                     </div>
                                 </div>
@@ -146,4 +149,11 @@
             </div>
         </div>
     </body>
+    <script>
+    function logout() {
+        event.preventDefault();
+        document.getElementById('logout-form').submit();
+    }
+</script>
+
 @endsection

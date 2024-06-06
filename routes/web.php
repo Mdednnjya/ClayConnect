@@ -35,6 +35,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //authentication
 Route::get('/login', [UserController::class, 'showLogin'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/register', [UserController::class, 'showRegister'])->name('register');
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
