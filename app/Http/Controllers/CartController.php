@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\CartItem;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Order;
+use App\Models\OrderItem;
 class CartController extends Controller
 {
     public function addToCart(Request $request)
@@ -38,38 +39,56 @@ class CartController extends Controller
 
     public function viewCart()
     {
-    $user = Auth::user();
-    $cart = $user->carts;
-
-    if (!$cart) {
-        // Jika pengguna tidak memiliki keranjang belanja, buat keranjang belanja baru
-        $cart = new Cart();
-        $cart->user_id = $user->id;
-        $cart->save();
-    }
-
-    // Ambil ulang keranjang belanja
-    $cart = Cart::with('cartItems.product')->where('user_id', $user->id)->first();
-
-    // Render view with data
-    $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
-    return view('products.cart', compact('googleMapsApiKey', 'cart'));
-    }
-
-
-    public function removeFromCart($id)
-    {
         $user = Auth::user();
-        $cartItem = CartItem::where('id', $id)->whereHas('cart', function($query) use ($user) {
-            $query->where('user_id', $user->id);
-        })->first();
+        $cart = Cart::with('cartItems.product')->where('user_id', $user->id)->first();
 
-        if (!$cartItem) {
-            return response()->json(['message' => 'Cart item not found'], 404);
+        if (!$cart) {
+            $cart = new Cart();
+            $cart->user_id = $user->id;
+            $cart->save();
         }
 
-        $cartItem->delete();
-
-        return response()->json(['message' => 'Product removed from cart']);
+        $cart = Cart::with('cartItems.product')->where('user_id', $user->id)->first();
+        $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+        return view('products.cart', compact('cart'), compact('googleMapsApiKey'));
     }
+
+    public function removeFromCart(Request $request, $id)
+{
+    $user = Auth::user();
+    $cartItem = CartItem::where('id', $id)->whereHas('cart', function($query) use ($user) {
+        $query->where('user_id', $user->id);
+    })->first();
+
+    if (!$cartItem) {
+        return redirect()->back()->with('error', 'Cart item not found');
+    }
+
+    $request->validate([
+        'quantity' => 'required|integer|min:1|max:' . $cartItem->quantity,
+    ]);
+
+    if ($cartItem->quantity > $request->quantity) {
+        $cartItem->quantity -= $request->quantity;
+        $cartItem->save();
+    } else {
+        $cartItem->delete();
+    }
+
+    return redirect()->back()->with('success', 'Product removed from cart');
+}
+
+public function showPaymentPage()
+{
+    $user = Auth::user();
+    $cart = Cart::with('cartItems.product')->where('user_id', $user->id)->first();
+
+    if (!$cart || $cart->cartItems->isEmpty()) {
+        return redirect()->route('cart.view')->with('error', 'Your cart is empty');
+    }
+    $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
+    return view('products.payment.payment', compact('cart'), compact('googleMapsApiKey'));
+}
+
+
 }

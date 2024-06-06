@@ -16,8 +16,8 @@
             </nav>
             <div class="col-lg-12">
                 <div class="row">
-                    @if(Auth::user()->cart && Auth::user()->cart->cartItems->count() > 0)
-                        @foreach(Auth::user()->cart->cartItems as $cartItem)
+                    @if($cart && $cart->cartItems->count() > 0)
+                        @foreach($cart->cartItems as $cartItem)
                             <div class="col-md-4 product-image">
                                 <div class="card align-self-end mb-3" style="background-color: #fff5eb;">
                                     <div class="d-flex justify-content-center">
@@ -62,6 +62,12 @@
                                         <span class="star">&#9733;</span>
                                         <span class="star">&#9734;</span>
                                     </div>
+                                    <form action="{{ route('cart.remove', $cartItem->id) }}" method="POST" class="mt-3">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="number" name="quantity" value="1" min="1" max="{{ $cartItem->quantity }}" class="form-control mb-2">
+                                        <button type="submit" class="btn btn-danger">Remove from Cart</button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-md-4 d-flex justify-content-center align-items-center product-payment">
@@ -75,13 +81,13 @@
                                                 <p class="card-text">Subtotal</p>
                                             </div>
                                             <div class="col-6 text-end" style="font-family: 'Crimson Text'; font-size: 17px">
-                                                <p class="card-text mb-4">Rp. {{ number_format($cartItem->product->price * $cartItem->quantity,2) }}</p>
+                                                <p class="card-text mb-4">Rp. {{ number_format($cartItem->product->price * $cartItem->quantity, 2) }}</p>
                                                 <p class="card-text mb-5">Rp. 4.000,00</p>
                                                 <p class="card-text">Rp. {{ number_format(($cartItem->product->price * $cartItem->quantity) + 4000, 2) }}</p>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center">
-                                            <a class="btn btn-dark" href="{{ route('products.payment') }}" style="font-family: 'Scheherazade New'; font-size: 20px; width: 85%"><b>Buy Now</b></a>
+                                        <a class="btn btn-dark" href="{{ route('payment.show') }}" style="font-family: 'Scheherazade New'; font-size: 20px; width: 85%">Buy Now</a>
                                         </div>
                                     </div>
                                 </div>

@@ -52,7 +52,7 @@
         </a>
         <div class="icon-container d-flex justify-content-between align-items-center mx-auto">
             <li class="nav-item mr-5 d-flex justify-content-center align-items-center">
-                <a class="cart" href="{{ route('wishlist') }}">
+                <a class="cart" href="#">
                     <img class="nav-link" id="cart" src="{{ asset('images/header/cart.svg') }}">
                 </a>
             </li>

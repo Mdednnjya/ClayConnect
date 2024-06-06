@@ -6,8 +6,8 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="accountDropdown" style="color: black;">
                 <li><a class="dropdown-item" href="account" style="font-family: Garamond;">My Account</a></li>
-                <li><a class="dropdown-item" href="{{ route('wishlist') }}" style="font-family: Garamond;">Wishlist</a></li>
-                <li><a class="dropdown-item" href="history" style="font-family: Garamond;">History</a></li>
+                <li><a class="dropdown-item" href="#" style="font-family: Garamond;">Wishlist</a></li>
+                <li><a class="dropdown-item" href="{{ route('history') }}" style="font-family: Garamond;">History</a></li>
                 <li><a class="dropdown-item" href="settings" style="font-family: Garamond;">Settings</a></li>
             </ul>
         </div>

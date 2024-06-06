@@ -27,7 +27,7 @@ class ProductController extends Controller
         if ($request->has('min_price') && $request->has('max_price')) {
             $query->whereBetween('price', [$request->input('min_price'), $request->input('max_price')]);
         }
-        $products = $query->paginate(9);
+        $products = $query->paginate(6);
         $googleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
         return view('products.index', compact('googleMapsApiKey'))->with('products', $products);
     }
