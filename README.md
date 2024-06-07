@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/Mdennjya/ClayConnect" target="_blank"><img src="public/images/brand-nae.svg" width="200" alt="ClayConnect Logo"></a></p>
+<p align="center"><a href="https://github.com/Mdennjya/ClayConnect" target="_blank"><img src="public/images/brand-name.svg" width="200" alt="ClayConnect Logo"></a></p>
 
 ## About ClayConnect
 
