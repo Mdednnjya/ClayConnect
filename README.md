@@ -1,8 +1,10 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://github.com/Mdennjya/ClayConnect" target="_blank"><img src="public/images/brand-name.svg" width="200" alt="ClayConnect Logo"></a></p>
 
-## About Laravel
+## About ClayConnect
 
-Laravel is a web application framework known for its elegant syntax and enjoyable development experience. It simplifies common tasks in web projects, such as routing, dependency injection, and database management. Laravel also offers features like background job processing, real-time event broadcasting, and more, making it suitable for large and robust applications.
+UD. Putra Ilham, now rebranded as ClayConnect, is an arts and crafts store located in Malang City that specializes in the production and sale of various flower vases, pots, and other craft items with good quality and affordable prices. ClayConnect has been established for several years and has embarked on a long journey in the pottery craft industry, creating high-quality and unique products to meet customer needs.
+
+This repository was created to help digitize and market ClayConnect, aiming to expand its reach and enhance its online presence. By building a dedicated website, we aim to make ClayConnect's products more accessible to a broader audience and provide a platform for better customer engagement.
 
 ## Getting Started
 
@@ -112,4 +114,6 @@ To deploy the project, you will need to follow these steps on your server:
 ## Built With
 
 - [Laravel](https://laravel.com/) - The PHP framework for web artisans
-- [Node.js](https://nodejs.org/) - JavaScript runtime built on Chrome's V8 JavaScript engine
+- [Bootstrap](https://getbootstrap.com/) - The most popular HTML, CSS, and JS library in the world
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - The programming language of the Web
+- [MySQL](https://www.mysql.com/) - The world's most popular open-source database
