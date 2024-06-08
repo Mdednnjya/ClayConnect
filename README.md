@@ -117,3 +117,13 @@ To deploy the project, you will need to follow these steps on your server:
 - [Bootstrap](https://getbootstrap.com/) - The most popular HTML, CSS, and JS library in the world
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - The programming language of the Web
 - [MySQL](https://www.mysql.com/) - The world's most popular open-source database
+
+## Contributors
+
+- **Made Naryan Dananjaya** - Initial work - [Mdennjya](https://github.com/Mdennjya)
+- **Naufal Alif Zhafran** - Additional contributions - [QwAct225](https://github.com/QwAct225)
+- **I Kadek Surya Satya Dharma** - Additional contributions - [Suryy16](https://github.com/Suryy16)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
