@@ -30,7 +30,7 @@
             </div>
             <div class="row text-center">
                     <a href="{{ route('products.index') }}" style="font-family: 'Crimson Text'; text-decoration: none; color: #4A4A4A">View More ></a>
-                </div>
+            </div>
         </div>
 
         <!-- About -->
